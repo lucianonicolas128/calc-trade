@@ -18,10 +18,11 @@
                     <input type="text" name="" class="form-control" id="operaciones">
                 </div>
                 <input type="button" class="btn btn-primary w-100" value="Calcular" name="" (click)="calculator()">
-
-                <p><span *ngFor="let val of valoresTotales, index as i"><span class="badge badge-light mx-2">{{i+1}}  {{val | currency}}</span> </span>
-                </p>
             </form>
         </div>
+    </div>
+    <div class="card mt-5 p-2">
+        <p><span *ngFor="let val of valoresTotales, index as i"><span class="badge badge-light mx-2">Día {{i+1}} - {{val | currency}}</span><br> </span>
+        </p>
     </div>
 </div>
