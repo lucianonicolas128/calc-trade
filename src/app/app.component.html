@@ -21,8 +21,33 @@
             </form>
         </div>
     </div>
-    <div class="card mt-5 p-2">
-        <p><span *ngFor="let val of valoresTotales, index as i"><span class="badge badge-light mx-2">Día {{i+1}} - {{val | currency}}</span><br> </span>
-        </p>
+    <div class=" mt-5 p-2">
+        <!-- <p>
+            <span *ngFor="let val of valoresTotales, index as i">
+
+                Día {{i+1}} - <h1 class="badge badge-light mx-2">{{val | currency}}</h1> - {{gananciasTotales[i] | currency}} <br>
+
+            </span>
+        </p> -->
+        <table class="table table-hover">
+            <thead class="thead-dark">
+              <tr>
+                <th># Día</th>
+                <th>Capital</th>
+                <th>Ganancia</th>
+                <th>Ganancia diaria</th>
+                <th>$USD</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let val of valoresTotales, index as i">
+                <th scope="row">{{i + 1}}</th>
+                <td>{{val | currency}}</td>
+                <td class="ganancia">+ {{gananciasTotales[i] | currency}}</td>
+                <td class="ganancia">+ {{gananciasDiarias[i] | currency}}</td>
+                <td class="usd">{{valoresTotalesUSD[i] | currency}}</td>
+              </tr>
+            </tbody>
+          </table>
     </div>
 </div>
